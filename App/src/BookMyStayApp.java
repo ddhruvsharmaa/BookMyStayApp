@@ -1,17 +1,8 @@
-class Room {
-    int id;
-    boolean available = false;
-
-    Room(int id) {
-        this.id = id;
-    }
-}
-
 public class BookMyStayApp {
     public static void main(String[] args) {
-        Room r = new Room(101);
-        r.available = true;
+        Runnable r = () -> System.out.println(Thread.currentThread().getName());
 
-        System.out.println("Booking Cancelled");
+        new Thread(r).start();
+        new Thread(r).start();
     }
 }
