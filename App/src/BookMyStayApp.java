@@ -1,19 +1,18 @@
 import java.util.*;
 
 class Booking {
-    int roomId;
-    List<String> services = new ArrayList<>();
+    int id;
 
     Booking(int id) {
-        roomId = id;
+        this.id = id;
     }
 }
 
 public class BookMyStayApp {
     public static void main(String[] args) {
-        Booking b = new Booking(101);
-        b.services.add("WiFi");
+        List<Booking> history = new ArrayList<>();
+        history.add(new Booking(1));
 
-        System.out.println(b.services);
+        System.out.println("History size: " + history.size());
     }
 }
