@@ -1,9 +1,17 @@
+class Room {
+    int id;
+    boolean available = false;
+
+    Room(int id) {
+        this.id = id;
+    }
+}
+
 public class BookMyStayApp {
     public static void main(String[] args) {
-        try {
-            int x = 10 / 0;
-        } catch (Exception e) {
-            System.out.println("Handled error");
-        }
+        Room r = new Room(101);
+        r.available = true;
+
+        System.out.println("Booking Cancelled");
     }
 }
