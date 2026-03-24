@@ -18,9 +18,11 @@ class RoomService {
         map.put(r.id, r);
     }
 
-    void display() {
+    void searchAvailable() {
         for (Room r : map.values()) {
-            System.out.println(r.id + " " + r.type);
+            if (r.available) {
+                System.out.println("Available: " + r.id);
+            }
         }
     }
 }
@@ -29,8 +31,7 @@ public class BookMyStayApp {
     public static void main(String[] args) {
         RoomService rs = new RoomService();
         rs.add(new Room(101, "Single"));
-        rs.add(new Room(102, "Double"));
 
-        rs.display();
+        rs.searchAvailable();
     }
 }
