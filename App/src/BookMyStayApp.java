@@ -1,37 +1,20 @@
 import java.util.*;
 
-class Room {
-    int id;
-    String type;
-    boolean available = true;
+class BookingRequest {
+    String name;
 
-    Room(int id, String type) {
-        this.id = id;
-        this.type = type;
-    }
-}
-
-class RoomService {
-    Map<Integer, Room> map = new HashMap<>();
-
-    void add(Room r) {
-        map.put(r.id, r);
-    }
-
-    void searchAvailable() {
-        for (Room r : map.values()) {
-            if (r.available) {
-                System.out.println("Available: " + r.id);
-            }
-        }
+    BookingRequest(String name) {
+        this.name = name;
     }
 }
 
 public class BookMyStayApp {
     public static void main(String[] args) {
-        RoomService rs = new RoomService();
-        rs.add(new Room(101, "Single"));
+        Queue<BookingRequest> q = new LinkedList<>();
 
-        rs.searchAvailable();
+        q.add(new BookingRequest("Dhruv"));
+        q.add(new BookingRequest("Aman"));
+
+        System.out.println("Queue size: " + q.size());
     }
 }
